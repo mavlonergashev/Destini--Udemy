@@ -19,6 +19,9 @@ class ViewController: UIViewController {
 
     }
 
-
+    @IBAction func choiceBtnPressed(_ sender: UIButton) {
+    }
+    
 }
+
 
