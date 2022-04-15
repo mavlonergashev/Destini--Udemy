@@ -9,8 +9,8 @@
 import Foundation
 
 struct Story {
-    var title: String
-    var choice1: String
-    var choice2: String
+    let title: String
+    let choice1: String
+    let choice2: String
     
 }
