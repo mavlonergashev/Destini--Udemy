@@ -23,12 +23,25 @@ class ViewController: UIViewController {
     @IBAction func choiceBtnPressed(_ sender: UIButton) {
         storyBrain.nextStory(choice: sender.currentTitle!)
         updateUI()
+        
+        if storyBrain.getStoryCount() == 0 {
+            showRestartAlert()
+        }
     }
     
     func updateUI() {
         storyLabel.text = storyBrain.getStory()
         choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
         choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
+    }
+    
+    func showRestartAlert() {
+        let alertVC = UIAlertController (title: "The End", message: "You finished the story.", preferredStyle: .alert)
+        let restartAction = UIAlertAction(title: "Restart", style: .default) { _ in
+            //
+        }
+        alertVC.addAction(restartAction)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
 }
